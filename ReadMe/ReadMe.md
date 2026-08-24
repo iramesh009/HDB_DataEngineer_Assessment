@@ -126,25 +126,9 @@
       <li>Schema validation ensures column consistency</li>
     </ul>
   </div>
-
-  <div class="section">
-    <h2>8. Reproducibility</h2>
-    <p>To ensure consistent execution:</p>
-    <ul>
-      <li><strong>Python Version:</strong> 3.x</li>
-      <li><strong>Environment:</strong> Jupyter Notebook or JupyterLab</li>
-      <li><strong>Dependencies:</strong> Listed in requirements.txt</li>
-    </ul>
-    <pre>
-        git clone https://github.com/iramesh009/hdb_resale.git
-        cd hdb_resale
-        pip install -r requirements.txt
-    </pre>
-    <p>Open <code>HDB_Resale_ETL_Pipeline.ipynb</code> and run all cells sequentially to reproduce outputs.</p>
-  </div>
   
  <div class="section">
-    <h2>9. Assumptions</h2>
+    <h2>8. Assumptions</h2>
     <ul>
       <li>HDB flats follow a 99-year lease model</li>
       <li>Duplicate records are defined using all columns except resale price</li>
@@ -154,67 +138,78 @@
   </div>
 
    <div class="section">
-    <h2>10. Folder Structure</h2>
-    <ul>
-      <li>Q0_HDB_Raw_Data/ → Raw input CSVs</li>
-      <li>Q1_HDB_Bronze_Level_Data/ → Merged dataset</li>
-      <li>Q2_HDB_Silver_Level_Data/ → Profiled dataset</li>
-      <li>Q3_HDB_Data_Validation/ → Valid & invalid datasets</li>
-      <li>Q4_HDB_Lease_Recalculation/ → Lease-adjusted data</li>
-      <li>Q5_HDB_Composite_Key_Deduplication/ → Deduplicated + failed</li>
-      <li>Q6_HDB_ResalePrice_AnomalyDetection/ → Normal & anomalous</li>
-      <li>Q7_HDB_DataTransformation/ → Final transformed dataset</li>
-    </ul>
-  </div>
-   
-<div class="section">
-  <h2>11. Data Output Requirements</h2>
-  <p>The ETL pipeline enforces strict output requirements to ensure data quality, traceability, and reproducibility. All datasets produced are grouped into five mandatory categories:</p>
+    <h2>9. Output Files</h2>
+    <p>Produce structured outputs:</p>
   <table style="border:1px solid #000; border-collapse:collapse; width:100%;">
     <thead>
       <tr style="background-color:#f2f2f2;">
-        <th style="border:1px solid #000; padding:8px;">Output Group</th>
-        <th style="border:1px solid #000; padding:8px;">Input File Example</th>
-        <th style="border:1px solid #000; padding:8px;">Final Output</th>
-        <th style="border:1px solid #000; padding:8px;">Description</th>
+        <th style="border:1px solid #000; padding:8px;">Folder Name</th>
+        <th style="border:1px solid #000; padding:8px;">Dataset / Content</th>
+        <th style="border:1px solid #000; padding:8px;">Purpose</th>       
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td style="border:1px solid #000; padding:8px;">Raw</td>
-        <td style="border:1px solid #000; padding:8px;">Original CSVs</td>
-        <td style="border:1px solid #000; padding:8px;">Bronze Master Dataset</td>
-        <td style="border:1px solid #000; padding:8px;">Preserved raw files</td>
+        <td style="border:1px solid #000; padding:8px;">HDB_Raw_Dataset</td>
+        <td style="border:1px solid #000; padding:8px;">Original HDB Source CSV Files</td>
+        <td style="border:1px solid #000; padding:8px;">Stores the 3 original HDB datasets exactly as received, without modification.</td>    
       </tr>
       <tr>
-        <td style="border:1px solid #000; padding:8px;">Cleaned</td>
-        <td style="border:1px solid #000; padding:8px;">Bronze Master Dataset</td>
-        <td style="border:1px solid #000; padding:8px;">Validated Cleaned Dataset</td>
-        <td style="border:1px solid #000; padding:8px;">Passed quality checks</td>
+        <td style="border:1px solid #000; padding:8px;">HDB_Master_Raw</td>
+        <td style="border:1px solid #000; padding:8px;">Master Raw Dataset</td>
+        <td style="border:1px solid #000; padding:8px;">Consolidates the raw HDB source files into a single dataset while preserving the original source information.</td>  
       </tr>
       <tr>
-        <td style="border:1px solid #000; padding:8px;">Transformed</td>
-        <td style="border:1px solid #000; padding:8px;">Cleaned Dataset</td>
-        <td style="border:1px solid #000; padding:8px;">Transformed Dataset</td>
-        <td style="border:1px solid #000; padding:8px;">Identifier created, analytics‑ready</td>
+        <td style="border:1px solid #000; padding:8px;">HDB_Dataset_Cleaned</td>
+        <td style="border:1px solid #000; padding:8px;">Validated & Deduplicated Dataset</td>
+        <td style="border:1px solid #000; padding:8px;">Contains records that failed validation or were rejected during deduplication, including a failed_rule where applicable.</td>       
       </tr>
       <tr>
-        <td style="border:1px solid #000; padding:8px;">Failed</td>
-        <td style="border:1px solid #000; padding:8px;">Bronze/Cleaned/Lease</td>
-        <td style="border:1px solid #000; padding:8px;">Invalid/Failed datasets</td>
-        <td style="border:1px solid #000; padding:8px;">Audit trail of rejected records</td>
+        <td style="border:1px solid #000; padding:8px;">HDB_Additional_Data_Cleaning</td>
+        <td style="border:1px solid #000; padding:8px;">Additional Data Cleaning Output</td>
+        <td style="border:1px solid #000; padding:8px;">Contains data after applying additional standardisation, formatting, and data-cleaning rules beyond the initial validation.</td>        
       </tr>
       <tr>
-        <td style="border:1px solid #000; padding:8px;">Hashed</td>
-        <td style="border:1px solid #000; padding:8px;">Cleaned Dataset</td>
-        <td style="border:1px solid #000; padding:8px;">Hashed Dataset</td>
-        <td style="border:1px solid #000; padding:8px;">SHA256 resale identifier</td>
+        <td style="border:1px solid #000; padding:8px;">HDB_Transformed_Hashed</td>
+        <td style="border:1px solid #000; padding:8px;">Resale Price Anomaly Detection Results</td>
+        <td style="border:1px solid #000; padding:8px;">Contains the cleaned data after applying the Resale Identifier transformation and hashing the required identifier.</td>
+      </tr>
+         <tr>
+        <td style="border:1px solid #000; padding:8px;">HDB_ResalePrice_Anomaly_Detection</td>
+        <td style="border:1px solid #000; padding:8px;">Additional Data Cleaning Output</td>
+        <td style="border:1px solid #000; padding:8px;">Contains resale records classified as Normal or Anomalous, together with relevant anomaly metrics or detection reasons.</td>        
+      </tr>
+      <tr>
+        <td style="border:1px solid #000; padding:8px;">HDB_Lease_Recalculation</td>
+        <td style="border:1px solid #000; padding:8px;">Lease Recalculated Dataset</td>
+        <td style="border:1px solid #000; padding:8px;">Contains the processed HDB resale data with the required lease-related values recalculated according to the defined business rules.</td>
       </tr>
     </tbody>
   </table>
 </div>
+<p>The Transformed dataset includes the Resale Identifier column. Since the Hashed dataset is simply the Transformed dataset with an additional SHA‑256 hash column, both requirements are satisfied in a single output file: HDB_Transformed_Hashed.csv.</p>
 
-The Transformed dataset includes the Resale Identifier column. Since the Hashed dataset is simply the Transformed dataset with an additional SHA‑256 hash column, both requirements are satisfied in a single output file: HDB_Transformed_Hashed.csv.
+ <div class="section">
+    <h2>10. Architecture Diagram</h2>
+
+    <h3><span
+style="color:#0b5394; font-weight:bold; font-size:22px;">4. Data Pipeline Flow</span></h3>
+<p>
+<img src="HDB_High-Level_Architecture_Design.svg" alt="Arch Design" style="max-width:100%; border-radius:8px;">
+</p>
+</div>
+    <p>The architecture design is provided in SVG format for clarity, as some icons were missing when exporting the diagram from Draw.io to JPEG or PNG. Therefore, I have included the SVG file along with the PDF and Draw.io files. Please refer to the image for a detailed view.</p>
+  </div>
+
+
+ <div class="section">
+    <h2>11. Conclusion</h2>
+    <p>This ETL pipeline demonstrates a robust and scalable approach to processing real-world housing data. 
+    By combining data validation, deduplication, anomaly detection, and transformation, the pipeline ensures 
+    high-quality, analytics-ready datasets while maintaining full traceability through audit layers.</p>
+  </div>
+
+
 
   <div class="section">
     <h2>12. Conclusion</h2>
