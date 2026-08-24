@@ -1,6 +1,7 @@
 
 <body>
-  <h1>🏢 HDB Resale ETL Pipeline</h1>
+  <h1 style="color:#0b5394;">🏢 HDB Resale ETL Pipeline</h1>
+
 
   <div class="section">
     <h3>1. Project Overview</h3>
