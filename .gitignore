@@ -1,9 +1,0 @@
-# Ignore raw data and temp files
-Architecture_Diagram/.ipynb_checkpoints/
-HDB_Submission/Source_Code/.ipynb_checkpoints/
-HDB_Submission/Source_Code/.ipynb_checkpoints/
-HDB_Submission/Source_Code/.ipynb_checkpoints/
-Source_Code/.ipynb_checkpoints/HDB_Resale_ETL_Pipeline-checkpoint.ipynb
-Source_Code/.ipynb_checkpoints/Untitled1-checkpoint.ipynb
-Source_Code/.ipynb_checkpoints/hdb_resale-checkpoint.env
-
