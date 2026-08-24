@@ -79,7 +79,7 @@
 
 
   <div class="section">
-    <h2>5. Jupyter Notebook</h2>
+    <h2>4. Jupyter Notebook</h2>
     <p>The repository includes: <code><b>HDB_Resale_ETL_Pipeline.ipynb</b></code></p>
     <ul>
       <li>Inline comments explaining each code block</li>
@@ -90,7 +90,7 @@
   </div>
 
    <div class="section">
-    <h2>6. Engineering Best Practices</h2>
+    <h2>5. Engineering Best Practices</h2>
     <p><b>Code Quality</b></p>
     <ul>
       <li>Modular functions (e.g., compute_remaining_lease(), create_resale_identifier())</li>
@@ -126,7 +126,7 @@
   </div>
   
  <div class="section">
-    <h2>8. Assumptions</h2>
+    <h2>6. Assumptions</h2>
     <ul>
       <li>HDB flats follow a 99-year lease model</li>
       <li>Duplicate records are defined using all columns except resale price</li>
@@ -136,7 +136,7 @@
   </div>
 
    <div class="section">
-    <h2>9. Output Files</h2>
+    <h2>7. Output Files</h2>
     <p>Produce structured outputs:</p>
   <table style="border:1px solid #000; border-collapse:collapse; width:100%;">
     <thead>
@@ -189,7 +189,7 @@
 <p>The Transformed dataset includes the Resale Identifier column. Since the Hashed dataset is simply the Transformed dataset with an additional SHA‑256 hash column, both requirements are satisfied in a single output file: HDB_Transformed_Hashed.csv.</p>
 
  <div class="section">
-    <h2>10. Architecture Diagram</h2>
+    <h2>8. Architecture Diagram</h2>
 
 <p>The diagram below illustrates the layered architecture (Bronze, Silver, Gold, Audit) and shows how data flows through each stage of the pipeline.</p>
 
@@ -198,7 +198,7 @@
 </div>
  
  <div class="section">
-    <h2>11. Conclusion</h2>
+    <h2>9. Conclusion</h2>
     <p>This ETL pipeline demonstrates a robust and scalable approach to processing real-world housing data. 
     By combining data validation, deduplication, anomaly detection, and transformation, the pipeline ensures 
     high-quality, analytics-ready datasets while maintaining full traceability through audit layers.</p>
