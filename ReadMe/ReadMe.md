@@ -1,6 +1,7 @@
 
 <body>
-  <h1 style="color:#0b5394;">🏢 HDB Resale ETL Pipeline</h1>
+<h1 style="color:#0b5394;">🏢 HDB Resale ETL Pipeline</h1>
+
 <!-- Navy heading -->
 <h1 style="color:navy;">🏢 HDB Resale ETL Pipeline</h1>
 
