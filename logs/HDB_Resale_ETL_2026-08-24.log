@@ -1,0 +1,98 @@
+2026-08-24 09:37:55,306 | INFO | ============================================================
+2026-08-24 09:37:55,306 | INFO | HDB RESALE ETL PIPELINE STARTED
+2026-08-24 09:37:55,306 | INFO | ============================================================
+2026-08-24 09:37:55,308 | INFO | Q1 Dataset Merging process started.
+2026-08-24 09:38:34,396 | INFO | Cleaned records: 92544
+2026-08-24 09:38:34,396 | INFO | Q1 Dataset merging completed successfully.
+
+2026-08-24 09:38:34,537 | INFO | Q2 Data profiling process started.
+2026-08-24 09:39:10,905 | INFO | Total Rows: 92544
+2026-08-24 09:39:10,905 | INFO | Duplicate Rows: 273
+2026-08-24 09:39:11,356 | INFO | Potential Resale Price Outliers: 3334
+2026-08-24 09:39:11,356 | INFO | Q2 Data profiling completed successfully.
+
+2026-08-24 09:39:23,967 | INFO | Pandas backend loaded 2.3.3
+2026-08-24 09:39:24,014 | INFO | Numpy backend loaded 2.3.5
+2026-08-24 09:39:24,048 | INFO | Pyspark backend loaded 3.5.1
+2026-08-24 09:39:24,048 | INFO | Python backend loaded
+2026-08-24 09:39:31,342 | INFO | Q2 YData Profiling started
+2026-08-24 09:39:32,138 | INFO | Q2 Total records: 92544
+2026-08-24 09:39:32,138 | INFO | Q2 Total columns: 11
+2026-08-24 09:39:37,884 | INFO | Q2 Duplicate records: 273
+2026-08-24 09:39:54,273 | INFO | YData Profiling report generated: C:\Users\ilang\HDB_Data_Engineer_Assessment\reports\HDB_Data_Profiling_Report.html
+2026-08-24 09:39:54,273 | INFO | Q2 YData Profiling completed successfully.
+
+2026-08-24 09:39:54,308 | INFO | Q3 Data validation process started.
+2026-08-24 09:40:17,598 | INFO | Valid Data Rows: 92544
+2026-08-24 09:40:19,262 | INFO | Failed Data Rows: 0
+2026-08-24 09:40:19,263 | INFO | Q3 Data validation completed successfully.
+
+2026-08-24 09:40:19,285 | INFO | Q4 Recompute remaining lease process started.
+2026-08-24 09:40:40,748 | INFO | Valid Data Rows: 92544
+2026-08-24 09:40:40,749 | INFO | Q4 Recompute remaining lease completed successfully.
+
+2026-08-24 09:40:40,767 | INFO | Q5 Duplicate data handling process started.
+2026-08-24 09:41:27,261 | INFO | Valid Data Rows: 90944
+2026-08-24 09:41:32,663 | INFO | Failed Data Rows: 1600
+2026-08-24 09:41:32,663 | INFO | Q5 Duplicate data handling completed successfully.
+
+2026-08-24 09:41:32,681 | INFO | Q6 Anmoalous detection process started.
+2026-08-24 09:42:32,609 | INFO | Valid Data Rows: 90944
+2026-08-24 09:42:32,609 | INFO | Q6 Anmoalous detection completed successfully.
+
+2026-08-24 09:42:32,639 | INFO | Q7 Additional data cleaning & validation process started.
+2026-08-24 09:44:08,336 | INFO | Valid Data Rows: 90911
+2026-08-24 09:44:17,794 | INFO | Failed Data Rows: 1633
+2026-08-24 09:44:17,794 | INFO | Q7 Additional data cleaning & validation completed successfully.
+
+2026-08-24 09:44:17,852 | INFO | Q8 Transforation process started.
+2026-08-24 09:45:24,002 | INFO | Valid Data Rows: 90911
+2026-08-24 09:45:24,002 | INFO | Q8 Transformation completed successfully.
+
+2026-08-24 10:24:09,121 | INFO | Closing down clientserver connection
+2026-08-24 10:24:14,994 | INFO | ============================================================
+2026-08-24 10:24:14,994 | INFO | HDB RESALE ETL PIPELINE STARTED
+2026-08-24 10:24:14,994 | INFO | ============================================================
+2026-08-24 10:24:14,996 | INFO | Q1 Dataset Merging process started.
+2026-08-24 10:24:44,425 | INFO | Cleaned records: 92544
+2026-08-24 10:24:44,425 | INFO | Q1 Dataset merging completed successfully.
+
+2026-08-24 10:24:44,463 | INFO | Q2 Data profiling process started.
+2026-08-24 10:25:17,882 | INFO | Total Rows: 92544
+2026-08-24 10:25:17,882 | INFO | Duplicate Rows: 273
+2026-08-24 10:25:18,352 | INFO | Potential Resale Price Outliers: 3334
+2026-08-24 10:25:18,352 | INFO | Q2 Data profiling completed successfully.
+
+2026-08-24 10:25:23,677 | INFO | Pandas backend loaded 2.3.3
+2026-08-24 10:25:23,677 | INFO | Numpy backend loaded 2.3.5
+2026-08-24 10:25:23,693 | INFO | Pyspark backend loaded 3.5.1
+2026-08-24 10:25:23,693 | INFO | Python backend loaded
+2026-08-24 10:25:26,914 | INFO | Q2 YData Profiling started
+2026-08-24 10:25:27,470 | INFO | Q2 Total records: 92544
+2026-08-24 10:25:27,470 | INFO | Q2 Total columns: 11
+2026-08-24 10:25:32,586 | INFO | Q2 Duplicate records: 273
+2026-08-24 10:25:50,196 | INFO | YData Profiling report generated: C:\Users\ilang\HDB_Data_Engineer_Assessment\reports\HDB_Data_Profiling_Report.html
+2026-08-24 10:25:50,196 | INFO | Q2 YData Profiling completed successfully.
+
+2026-08-24 10:25:50,233 | INFO | Q3 Data validation process started.
+2026-08-24 10:26:10,782 | ERROR | Q3 Data validation failed
+Traceback (most recent call last):
+  File "C:\Users\ilang\AppData\Local\Temp\ipykernel_28604\1224400973.py", line 206, in <module>
+    cleaned_df.toPandas().to_csv(HDB_Dataset_Cleaned, index=False, encoding="utf-8-sig")
+  File "C:\Users\ilang\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ilang\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\generic.py", line 3989, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ilang\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\io\formats\format.py", line 1014, in to_csv
+    csv_formatter.save()
+  File "C:\Users\ilang\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\io\formats\csvs.py", line 251, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "C:\Users\ilang\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\io\common.py", line 749, in get_handle
+    check_parent_directory(str(handle))
+  File "C:\Users\ilang\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\io\common.py", line 616, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: 'C:\Users\ilang\HDB_Data_Engineer_Assessment\HDB_Cleaned'
+2026-08-24 10:28:52,977 | INFO | Closing down clientserver connection

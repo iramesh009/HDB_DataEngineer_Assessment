@@ -1,0 +1,51 @@
+2026-08-23 16:19:00,137 | INFO | ============================================================
+2026-08-23 16:19:00,137 | INFO | HDB RESALE ETL PIPELINE STARTED
+2026-08-23 16:19:00,138 | INFO | ============================================================
+2026-08-23 16:19:00,140 | INFO | Q1 Dataset Merging process started.
+2026-08-23 16:19:36,109 | INFO | Cleaned records: 92544
+2026-08-23 16:19:36,110 | INFO | Q1 Dataset merging completed successfully.
+
+2026-08-23 16:19:36,143 | INFO | Q2 Data profiling process started.
+2026-08-23 16:20:09,528 | INFO | Total Rows: 92544
+2026-08-23 16:20:09,529 | INFO | Duplicate Rows: 273
+2026-08-23 16:20:09,938 | INFO | Potential Resale Price Outliers: 3334
+2026-08-23 16:20:09,938 | INFO | Q2 Data profiling completed successfully.
+
+2026-08-23 16:20:15,675 | INFO | Pandas backend loaded 2.3.3
+2026-08-23 16:20:15,687 | INFO | Numpy backend loaded 2.3.5
+2026-08-23 16:20:15,698 | INFO | Pyspark backend loaded 3.5.1
+2026-08-23 16:20:15,698 | INFO | Python backend loaded
+2026-08-23 16:20:18,923 | INFO | Q2 YData Profiling started
+2026-08-23 16:20:19,745 | INFO | Q2 Total records: 92544
+2026-08-23 16:20:19,746 | INFO | Q2 Total columns: 11
+2026-08-23 16:20:25,732 | INFO | Q2 Duplicate records: 273
+2026-08-23 16:20:42,387 | INFO | YData Profiling report generated: C:\Users\ilang\HDB_Data_Engineer_Assessment\reports\HDB_Data_Profiling_Report.html
+2026-08-23 16:20:42,387 | INFO | Q2 YData Profiling completed successfully.
+
+2026-08-23 16:20:42,425 | INFO | Q3 Data validation process started.
+2026-08-23 16:21:07,505 | INFO | Valid Data Rows: 92544
+2026-08-23 16:21:09,344 | INFO | Failed Data Rows: 0
+2026-08-23 16:21:09,345 | INFO | Q3 Data validation completed successfully.
+
+2026-08-23 16:21:09,364 | INFO | Q4 Recompute remaining lease process started.
+2026-08-23 16:21:33,179 | INFO | Valid Data Rows: 92544
+2026-08-23 16:21:33,179 | INFO | Q4 Recompute remaining lease completed successfully.
+
+2026-08-23 16:21:33,206 | INFO | Q5 Duplicate data handling process started.
+2026-08-23 16:22:22,748 | INFO | Valid Data Rows: 90944
+2026-08-23 16:22:28,267 | INFO | Failed Data Rows: 1600
+2026-08-23 16:22:28,267 | INFO | Q5 Duplicate data handling completed successfully.
+
+2026-08-23 16:22:28,298 | INFO | Q6 Anmoalous detection process started.
+2026-08-23 16:23:24,795 | INFO | Valid Data Rows: 90944
+2026-08-23 16:23:24,796 | INFO | Q6 Anmoalous detection completed successfully.
+
+2026-08-23 16:23:24,839 | INFO | Q7 Additional data cleaning & validation process started.
+2026-08-23 16:24:57,158 | INFO | Valid Data Rows: 90911
+2026-08-23 16:25:05,916 | INFO | Failed Data Rows: 1633
+2026-08-23 16:25:05,916 | INFO | Q7 Additional data cleaning & validation completed successfully.
+
+2026-08-23 16:25:05,951 | INFO | Q8 Transforation process started.
+2026-08-23 16:26:17,942 | INFO | Valid Data Rows: 90911
+2026-08-23 16:26:17,942 | INFO | Q8 Transformation completed successfully.
+
