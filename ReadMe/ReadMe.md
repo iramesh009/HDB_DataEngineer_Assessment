@@ -118,7 +118,7 @@
   </div>
   
  <div class="section">
-    <h2>7. Error Handling & Data Quality Controls</h2>
+    <h3>6. Error Handling & Data Quality Controls</h3>
     <ul>
       <li>Try-except blocks used during file ingestion to handle missing or corrupt files</li>
       <li>Schema validation ensures column consistency</li>
@@ -126,7 +126,7 @@
   </div>
   
  <div class="section">
-    <h3>6. Assumptions</h3>
+    <h3>7. Assumptions</h3>
     <ul>
       <li>HDB flats follow a 99-year lease model</li>
       <li>Duplicate records are defined using all columns except resale price</li>
@@ -136,7 +136,7 @@
   </div>
 
    <div class="section">
-    <h3>7. Output Files</h3>
+    <h3>8. Output Files</h3>
     <p>Produce structured outputs:</p>
   <table style="border:1px solid #000; border-collapse:collapse; width:100%;">
     <thead>
@@ -189,7 +189,7 @@
 <p>The Transformed dataset includes the Resale Identifier column. Since the Hashed dataset is simply the Transformed dataset with an additional SHA‑256 hash column, both requirements are satisfied in a single output file: HDB_Transformed_Hashed.csv.</p>
 
  <div class="section">
-    <h3>8. Architecture Diagram</h3>
+    <h3>9. Architecture Diagram</h3>
 
 <p>The diagram below illustrates the layered architecture (Bronze, Silver, Gold, Audit) and shows how data flows through each stage of the pipeline.</p>
 
@@ -198,7 +198,7 @@
 </div>
  
  <div class="section">
-    <h3>9. Conclusion</h3>
+    <h3>10. Conclusion</h3>
     <p>This ETL pipeline demonstrates a robust and scalable approach to processing real-world housing data. 
     By combining data validation, deduplication, anomaly detection, and transformation, the pipeline ensures 
     high-quality, analytics-ready datasets while maintaining full traceability through audit layers.</p>
