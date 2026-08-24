@@ -76,10 +76,8 @@
     <h3>Q7 – Transformation (Gold Layer)</h3>
     <p>Generate Resale Identifier using block digits, average resale price, month, town. Apply SHA256 hashing for uniqueness and anonymization.</p>
   </div>
-</hr>
-<div>
 
-</hr>
+
   <div class="section">
     <h2>5. Jupyter Notebook</h2>
     <p>The repository includes: <code><b>HDB_Resale_ETL_Pipeline.ipynb</b></code></p>
@@ -162,22 +160,22 @@
       <tr>
         <td style="border:1px solid #000; padding:8px;">HDB_Dataset_Cleaned</td>
         <td style="border:1px solid #000; padding:8px;">Validated & Deduplicated Dataset</td>
-        <td style="border:1px solid #000; padding:8px;">Contains records that failed validation or were rejected during deduplication, including a failed_rule where applicable.</td>       
+        <td style="border:1px solid #000; padding:8px;">Contains records that passed validation and deduplication. Invalid or rejected records are stored separately in audit datasets.</td>       
       </tr>
       <tr>
         <td style="border:1px solid #000; padding:8px;">HDB_Additional_Data_Cleaning</td>
-        <td style="border:1px solid #000; padding:8px;">Additional Data Cleaning Output</td>
+        <td style="border:1px solid #000; padding:8px;">Cleaned Dataset (Additional Rules)</td>
         <td style="border:1px solid #000; padding:8px;">Contains data after applying additional standardisation, formatting, and data-cleaning rules beyond the initial validation.</td>        
       </tr>
       <tr>
         <td style="border:1px solid #000; padding:8px;">HDB_Transformed_Hashed</td>
-        <td style="border:1px solid #000; padding:8px;">Resale Price Anomaly Detection Results</td>
-        <td style="border:1px solid #000; padding:8px;">Contains the cleaned data after applying the Resale Identifier transformation and hashing the required identifier.</td>
+        <td style="border:1px solid #000; padding:8px;">Transformed & Hashed Dataset</td>
+        <td style="border:1px solid #000; padding:8px;">Transformed and hashed dataset containing Resale Identifier and SHA‑256 hash for uniqueness and anonymization.</td>
       </tr>
          <tr>
         <td style="border:1px solid #000; padding:8px;">HDB_ResalePrice_Anomaly_Detection</td>
-        <td style="border:1px solid #000; padding:8px;">Additional Data Cleaning Output</td>
-        <td style="border:1px solid #000; padding:8px;">Contains resale records classified as Normal or Anomalous, together with relevant anomaly metrics or detection reasons.</td>        
+        <td style="border:1px solid #000; padding:8px;">Resale Price Anomaly Dataset</td>
+        <td style="border:1px solid #000; padding:8px;">Contains resale records classified as Normal or Anomalous, with anomaly metrics and detection reasons.</td>        
       </tr>
       <tr>
         <td style="border:1px solid #000; padding:8px;">HDB_Lease_Recalculation</td>
@@ -187,42 +185,13 @@
     </tbody>
   </table>
 </div>
+
 <p>The Transformed dataset includes the Resale Identifier column. Since the Hashed dataset is simply the Transformed dataset with an additional SHA‑256 hash column, both requirements are satisfied in a single output file: HDB_Transformed_Hashed.csv.</p>
 
  <div class="section">
     <h2>10. Architecture Diagram</h2>
-<p>
-<p>The HDB Resale ETL Pipeline follows a layered architecture to ensure data quality, traceability, and scalability:</p>
 
-<p><b>1.Bronze Layer</b></p>
- <ul>
-      <li>Raw CSV files are ingested directly from source (data.gov.sg).</li>
-      <li>Data is merged, column names standardized, and date formats normalized.</li>
-      <li><b>Purpose:</b> preserve raw data in a unified master dataset.</li>
-</ul>
-<p><b>2.Silver Layer</b></p>
- <ul>
-      <li>Profiling and validation are applied (missing values, duplicates, type checks).</li>
-      <li>Invalid records are separated into a<b> Failed dataset</b> for audit.</li>
-      <li>Profiling and validation are applied (missing values, duplicates, type checks).</li>
-      <li>Lease recalculation and anomaly detection (IQR method) are performed.</li>
-      <li><b>Purpose:</b> produce a clean, validated dataset ready for transformation.</li>
-</ul>
-
-<p><b>3.Gold Layer</b></p>
- <ul>
-      <li>Transformation logic generates a <b>Resale Identifier</b> using block digits, town initials, month, and average resale price.</li>
-      <li>A <b>SHA‑256 hash</b> is applied for uniqueness and anonymization.</li>
-      <li>Profiling and validation are applied (missing values, duplicates, type checks).</li>      
-      <li><b>Purpose:</b> create an analytics‑ready dataset with identifiers for downstream BI/ML.</li>
-</ul>
-
-<p><b>4.Audit & Traceability</b></p>
- <ul>
-      <li>Failed datasets (invalid, duplicates, anomalies) are preserved for governance.</li>
-      <li>Cleaned + Hashed datasets are the final deliverables for analysis.</li>
-      <li>Ensures transparency in data handling.</li>           
-</ul>
+<p>The diagram below illustrates the layered architecture (Bronze, Silver, Gold, Audit) and shows how data flows through each stage of the pipeline.</p>
 
 <img src="HDB_High-Level_Architecture_Design.svg" alt="Arch Design" style="max-width:100%; border-radius:8px;">
 </p>
