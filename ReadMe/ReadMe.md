@@ -227,10 +227,7 @@
 <img src="HDB_High-Level_Architecture_Design.svg" alt="Arch Design" style="max-width:100%; border-radius:8px;">
 </p>
 </div>
-    <p>The architecture design is provided in SVG format for clarity, as some icons were missing when exporting the diagram from Draw.io to JPEG or PNG. Therefore, I have included the SVG file along with the PDF and Draw.io files. Please refer to the image for a detailed view.</p>
-  </div>
-
-
+ 
  <div class="section">
     <h2>11. Conclusion</h2>
     <p>This ETL pipeline demonstrates a robust and scalable approach to processing real-world housing data. 
