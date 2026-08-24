@@ -191,9 +191,9 @@
 
  <div class="section">
     <h2>10. Architecture Diagram</h2>
-
+<div>
     <h3><span
-style="color:#0b5394; font-weight:bold; font-size:22px;">4. Data Pipeline Flow</span></h3>
+style="color:#0b5394; font-weight:bold; font-size:22px;">4. Data Pipeline Flow</span></h3><div>
 <p>
 <img src="HDB_High-Level_Architecture_Design.svg" alt="Arch Design" style="max-width:100%; border-radius:8px;">
 </p>
@@ -209,14 +209,6 @@ style="color:#0b5394; font-weight:bold; font-size:22px;">4. Data Pipeline Flow</
     high-quality, analytics-ready datasets while maintaining full traceability through audit layers.</p>
   </div>
 
-
-
-  <div class="section">
-    <h2>12. Conclusion</h2>
-    <p>This ETL pipeline demonstrates a robust and scalable approach to processing real-world housing data. 
-    By combining data validation, deduplication, anomaly detection, and transformation, the pipeline ensures 
-    high-quality, analytics-ready datasets while maintaining full traceability through audit layers.</p>
-  </div>
 
 </body>
 </html>
