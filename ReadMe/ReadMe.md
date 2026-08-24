@@ -2,12 +2,6 @@
 <body>
 <h1 style="color:#0b5394;">🏢 HDB Resale ETL Pipeline</h1>
 
-<!-- Navy heading -->
-<h1 style="color:navy;">🏢 HDB Resale ETL Pipeline</h1>
-
-<!-- Brown heading -->
-<h1 style="color:brown;">🏢 HDB Resale ETL Pipeline</h1>
-
   <div class="section">
     <h3>1. Project Overview</h3>
     <p>This project implements an end-to-end ETL pipeline in Python to process Singapore HDB resale transaction data. 
@@ -32,7 +26,7 @@
         <li>Resale Flat Prices (Based on Registration Date), From Mar 2012 to Dec 2014.csv</li>
       </ul>
     <strong>Structure:</strong> Multiple files with consistent schema</p>
-    <h3>Key Fields:</h3>
+    <h4>Key Fields:</h4>
     <ul>
       <li>month</li>
       <li>town</li>
@@ -50,13 +44,13 @@
   <div class="section">
     <h3>3. ETL Pipeline Architecture</h3>
     <p>The pipeline is divided into seven stages (Q1–Q7), representing different layers of data processing.</p>
-    <h3>Q1 – Extraction (Bronze Layer)</h3>
+    <h4>Q1 – Extraction (Bronze Layer)</h4>
     <ul>
       <li>Input: Raw CSV files</li>
       <li>Process: Merge multiple datasets, standardize column names, normalize date formats</li>
       <li>Output: Unified master dataset</li>
     </ul>
-    <h3>Q2 – Profiling (Silver Layer)</h3>
+    <h4>Q2 – Profiling (Silver Layer)</h4>
     <ul>
       <li>Missing value analysis</li>
       <li>Duplicate detection</li>
@@ -65,7 +59,7 @@
       <li>Descriptive statistics</li>
       <li>Outlier identification</li>
     </ul>
-    <h3>Q3 – Validation (Silver Layer)</h3>
+    <h4>Q3 – Validation (Silver Layer)</h4>
     <ul>
       <li>Valid month format (YYYY-MM)</li>
       <li>Valid town names</li>
@@ -73,19 +67,19 @@
       <li>Valid storey range format</li>
     </ul>
     <p><strong>Output:</strong> Valid dataset, Invalid dataset (for audit and traceability)</p>
-    <h3>Q4 – Lease Recalculation</h3>
+    <h4>Q4 – Lease Recalculation</h4>
     <p>Remaining lease is recomputed based on a 99-year lease model. Output expressed in years and months relative to the current date.</p>
-    <h3>Q5 – Deduplication</h3>
+    <h4>Q5 – Deduplication</h4>
     <p>Composite key: All columns except resale price. Retain record with higher resale price, move lower-priced duplicates to failed dataset.</p>
-    <h3>Q6 – Anomaly Detection</h3>
+    <h4>Q6 – Anomaly Detection</h4>
     <p>Method: Interquartile Range (IQR), applied per town and flat type.</p>
-    <h3>Q7 – Transformation (Gold Layer)</h3>
+    <h4>Q7 – Transformation (Gold Layer)</h4>
     <p>Generate Resale Identifier using block digits, average resale price, month, town. Apply SHA256 hashing for uniqueness and anonymization.</p>
   </div>
 
 
   <div class="section">
-    <h2>4. Jupyter Notebook</h2>
+    <h3>4. Jupyter Notebook</h3>
     <p>The repository includes: <code><b>HDB_Resale_ETL_Pipeline.ipynb</b></code></p>
     <ul>
       <li>Inline comments explaining each code block</li>
@@ -96,7 +90,7 @@
   </div>
 
    <div class="section">
-    <h2>5. Engineering Best Practices</h2>
+    <h3>5. Engineering Best Practices</h3>
     <p><b>Code Quality</b></p>
     <ul>
       <li>Modular functions (e.g., compute_remaining_lease(), create_resale_identifier())</li>
@@ -132,7 +126,7 @@
   </div>
   
  <div class="section">
-    <h2>6. Assumptions</h2>
+    <h3>6. Assumptions</h3>
     <ul>
       <li>HDB flats follow a 99-year lease model</li>
       <li>Duplicate records are defined using all columns except resale price</li>
@@ -142,7 +136,7 @@
   </div>
 
    <div class="section">
-    <h2>7. Output Files</h2>
+    <h3>7. Output Files</h3>
     <p>Produce structured outputs:</p>
   <table style="border:1px solid #000; border-collapse:collapse; width:100%;">
     <thead>
@@ -195,7 +189,7 @@
 <p>The Transformed dataset includes the Resale Identifier column. Since the Hashed dataset is simply the Transformed dataset with an additional SHA‑256 hash column, both requirements are satisfied in a single output file: HDB_Transformed_Hashed.csv.</p>
 
  <div class="section">
-    <h2>8. Architecture Diagram</h2>
+    <h3>8. Architecture Diagram</h3>
 
 <p>The diagram below illustrates the layered architecture (Bronze, Silver, Gold, Audit) and shows how data flows through each stage of the pipeline.</p>
 
@@ -204,7 +198,7 @@
 </div>
  
  <div class="section">
-    <h2>9. Conclusion</h2>
+    <h3>9. Conclusion</h3>
     <p>This ETL pipeline demonstrates a robust and scalable approach to processing real-world housing data. 
     By combining data validation, deduplication, anomaly detection, and transformation, the pipeline ensures 
     high-quality, analytics-ready datasets while maintaining full traceability through audit layers.</p>
