@@ -191,10 +191,39 @@
 
  <div class="section">
     <h2>10. Architecture Diagram</h2>
-<div>
-    <h3><span
-style="color:#0b5394; font-weight:bold; font-size:22px;">4. Data Pipeline Flow</span></h3><div>
 <p>
+<p>The HDB Resale ETL Pipeline follows a layered architecture to ensure data quality, traceability, and scalability:</p>
+
+<p><b>1.Bronze Layer</b></p>
+ <ul>
+      <li>Raw CSV files are ingested directly from source (data.gov.sg).</li>
+      <li>Data is merged, column names standardized, and date formats normalized.</li>
+      <li><b>Purpose:</b> preserve raw data in a unified master dataset.</li>
+</ul>
+<p><b>2.Silver Layer</b></p>
+ <ul>
+      <li>Profiling and validation are applied (missing values, duplicates, type checks).</li>
+      <li>Invalid records are separated into a<b> Failed dataset</b> for audit.</li>
+      <li>Profiling and validation are applied (missing values, duplicates, type checks).</li>
+      <li>Lease recalculation and anomaly detection (IQR method) are performed.</li>
+      <li><b>Purpose:</b> produce a clean, validated dataset ready for transformation.</li>
+</ul>
+
+<p><b>3.Gold Layer</b></p>
+ <ul>
+      <li>Transformation logic generates a <b>Resale Identifier</b> using block digits, town initials, month, and average resale price.</li>
+      <li>A <b>SHA‑256 hash</b> is applied for uniqueness and anonymization.</li>
+      <li>Profiling and validation are applied (missing values, duplicates, type checks).</li>      
+      <li><b>Purpose:</b> create an analytics‑ready dataset with identifiers for downstream BI/ML.</li>
+</ul>
+
+<p><b>4.Audit & Traceability</b></p>
+ <ul>
+      <li>Failed datasets (invalid, duplicates, anomalies) are preserved for governance.</li>
+      <li>Cleaned + Hashed datasets are the final deliverables for analysis.</li>
+      <li>Ensures transparency in data handling.</li>           
+</ul>
+
 <img src="HDB_High-Level_Architecture_Design.svg" alt="Arch Design" style="max-width:100%; border-radius:8px;">
 </p>
 </div>
