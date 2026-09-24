@@ -44,7 +44,8 @@ RUN mkdir -p \
     /app/HDB_Lease_Recalculation \
     /app/HDB_ResalePrice_Anomaly_Detection \
     /app/HDB_Addtional_Data_Cleaning \
-    /app/HDB_Transformed_Hashed
+    /app/HDB_Transformed_Hashed \
+    /app/HDB_Lease_Recalculation
 
 # ============================================================
 # Convert notebook to Python script
