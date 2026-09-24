@@ -8,7 +8,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 RUN pip install --no-cache-dir jupyter nbconvert
 
-COPY HDB_Resale_ETL_Pipeline.ipynb .
+COPY source_code/HDB_Resale_ETL_Pipeline.ipynb .
 
 RUN jupyter nbconvert --to script HDB_Resale_ETL_Pipeline.ipynb
 
