@@ -22,7 +22,9 @@ RUN pip install --no-cache-dir jupyter nbconvert
 # Copy notebook and environment file
 COPY Source_Code/HDB_Resale_ETL_Pipeline.ipynb .
 COPY Source_Code/hdb_resale.env .
-COPY HDB_Raw_Dataset /app/HDB_Raw_Dataset .
+
+# Copy raw HDB datasets
+COPY HDB_Raw_Dataset /app/HDB_Raw_Dataset
 
 # Convert notebook to Python script
 RUN jupyter nbconvert --to script HDB_Resale_ETL_Pipeline.ipynb
